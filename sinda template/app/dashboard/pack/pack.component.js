@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var pack_service_1 = require('../../services/pack.service');
 var router_1 = require("@angular/router");
+var pack_1 = require('../../model/pack');
 var PackComponent = (function () {
     function PackComponent(packService, route) {
         this.packService = packService;
         this.route = route;
+        this.filtre = new pack_1.PackModel();
     }
     PackComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -61,18 +63,22 @@ var PackComponent = (function () {
     PackComponent.prototype.bloquerPack = function (isChecked) {
         if (isChecked) {
             this.etat = false;
+            this.etatForAjout = false;
         }
         else {
             this.etat = true;
+            this.etatForAjout = true;
         }
         console.log(this.etat);
     };
     PackComponent.prototype.debloquerPack = function (isChecked) {
         if (isChecked) {
             this.etat = true;
+            this.etatForAjout = true;
         }
         else {
             this.etat = false;
+            this.etatForAjout = false;
         }
         console.log(this.etat);
     };

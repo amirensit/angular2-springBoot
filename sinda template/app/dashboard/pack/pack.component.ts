@@ -3,7 +3,7 @@ import initDemo = require('../../../assets/js/charts.js');
 import {PackService} from '../../services/pack.service';
 
 import { Router } from "@angular/router";
-
+import {PackModel} from '../../model/pack';
 
 @Component({
     selector: 'home-cmp',
@@ -32,6 +32,8 @@ descriptionForAjout : string;
 nbre_max_serviceForAjout : number;
 kilometrage_maxForAjout : number;
 etatForAjout : boolean;
+
+filtre :PackModel = new PackModel();
 
 
      constructor(private  packService: PackService,private route :Router){}
@@ -111,8 +113,11 @@ bloquerPack(isChecked: boolean)
 {
     if(isChecked) {
     this.etat=false;
+    this.etatForAjout=false;
+
   } else {
     this.etat=true;
+    this.etatForAjout=true;
 
    
   }
@@ -124,8 +129,10 @@ debloquerPack(isChecked: boolean)
 {
     if(isChecked) {
     this.etat=true;
+    this.etatForAjout=true;
   } else {
     this.etat=false;
+    this.etatForAjout=false;
 
    
   }

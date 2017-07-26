@@ -25,7 +25,9 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'ng2-filter-pipe': 'node_modules/ng2-filter-pipe'
+      'ng2-filter-pipe': 'node_modules/ng2-filter-pipe',
+      'ng2-validation': 'npm:ng2-validation/bundles/ng2-validation.umd.js',
+      'libphonenumber-js' : 'npm:libphonenumber-js/bundle/libphonenumber-js.min.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -36,7 +38,10 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'ng2-filter-pipe': { main: '/dist/index.js',defaultExtension: 'js'              }
+      'ng2-filter-pipe': { main: '/dist/index.js',defaultExtension: 'js'              },
+      
+     
+      
       
     }
   });

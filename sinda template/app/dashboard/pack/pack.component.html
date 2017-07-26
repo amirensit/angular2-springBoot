@@ -34,17 +34,17 @@
                     <thead class="text-danger">
                         <tr>
                             <th>id_pack</th>
-                            <th>nom_pack</th>
-                            <th>description</th>
-                            <th>nbre_max_service</th>
-                            <th>kilometrage_max</th>
-                            <th>etat</th>
+                            <th>nom_pack <input type="text"  [(ngModel)]="filtre.nom_pack" placeholder="filtre" > </th>
+                            <th>description <input type="text"  [(ngModel)]="filtre.description" placeholder="filtre" > </th>
+                            <th>nbre_max_service <input type="text"  [(ngModel)]="filtre.nbre_max_service" placeholder="filtre" > </th>
+                            <th>kilometrage_max <input type="text"  [(ngModel)]="filtre.kilometrage_max" placeholder="filtre" >  </th>
+                            <th>etat  <input type="text"  [(ngModel)]="filtre.etat" placeholder="filtre" > </th>
                             <th>Edit </th>
                             
                         </tr>
                     </thead>
                     <tbody>
-                        <tr  *ngFor="let pack of packs">
+                        <tr  *ngFor="let pack of packs |filterBy: filtre">
 
                                 <td>{{pack.id_pack}}</td>
                                 <td>{{pack.nom_pack}}</td>
@@ -92,7 +92,8 @@
                             <div class="col-md-12">
                                 <div class="form-group form-black label-floating is-empty">
                                     <label class="control-label">nom_pack</label>
-                                    <input type="text" class="form-control" name="nom_packForAjout" [(ngModel)]="nom_packForAjout" >
+                                    <input type="text" class="form-control" name="nom_packForAjout" [(ngModel)]="nom_packForAjout" #field="ngModel" [rangeLength]="[5, 9]">
+                                    <p *ngIf="field.errors?.rangeLength">the length must be at least 5</p>
                                 </div>
                             </div>
                             
@@ -108,14 +109,26 @@
                             
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group form-black label-floating is-empty">
-                                    <label class="control-label">etat</label>
-                                    <input type="text" class="form-control" name="etatForAjout" [(ngModel)]="etatForAjout" >
-                                </div>
-                            </div>
+                        
+
+                        <div class="form-group row">
+                    <div class="checkbox">
+                        <label rel="tooltip" title="bloquer">
+                            <input type="checkbox"  (change)="bloquerPack($event.target.checked)"     >
+                        </label>
+                            <label>   bloquer       </label>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="checkbox">
+                            <label rel="tooltip" title="debloquer">
+                                <input type="checkbox"  (change)="debloquerPack($event.target.checked)"     >
+                            </label>
+                            <label>   debloquer       </label>
                         </div>
+                    </div>
+
+
 
                         <div class="row">
                             <div class="col-md-12">

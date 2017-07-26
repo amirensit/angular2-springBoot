@@ -18,6 +18,8 @@ var TypeServiceComponent = (function () {
         this.route = route;
         this.filtre = new model_1.Model();
         this.motCle = "";
+        this.pageCourante = 0;
+        this.size = 4;
     }
     TypeServiceComponent.prototype.ngOnInit = function () {
         var _this = this;

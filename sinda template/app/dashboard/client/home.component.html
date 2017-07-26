@@ -40,14 +40,14 @@
                     <thead class="text-danger">
                         <tr>
                             <th>id_client</th>
-                            <th>num_client</th>
-                            <th>nom_client</th>
-                                <th>etat</th>
+                            <th>num_client  <input type="number"  [(ngModel)]="filtre.num_client" placeholder="filtre" >  </th>
+                            <th>nom_client <input type="text"  [(ngModel)]="filtre.nom_client" placeholder="filtre" ></th>
+                                <th>etat <input type="text"  [(ngModel)]="filtre.etat" placeholder="filtre" > </th>
                                 <th>Edit </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr  *ngFor="let clients of clients">
+                        <tr  *ngFor="let clients of clients |filterBy: filtre">
 
                                 <td>{{clients.id_client}}</td>
                                 <td>{{clients.num_client}}</td>
@@ -104,14 +104,24 @@
                             
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group form-black label-floating is-empty">
-                                    <label class="control-label">etat</label>
-                                    <input type="text" class="form-control" name="etatForAjout" [(ngModel)]="etatForAjout" >
-                                </div>
-                            </div>
+                        
+
+                        <div class="form-group row">
+                    <div class="checkbox">
+                        <label rel="tooltip" title="bloquer">
+                            <input type="checkbox"  (change)="bloquerClient($event.target.checked)"     >
+                        </label>
+                            <label>   bloquer       </label>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="checkbox">
+                            <label rel="tooltip" title="debloquer">
+                                <input type="checkbox"  (change)="debloquerClient($event.target.checked)"     >
+                            </label>
+                            <label>   debloquer       </label>
                         </div>
+                    </div>
 
                         <div class="row">
                             <div class="col-md-9">

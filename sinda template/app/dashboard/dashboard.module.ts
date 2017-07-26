@@ -5,7 +5,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule, ReactiveFormsModule,} from "@angular/forms";
 import {CommonModule} from '@angular/common';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
-
+import { CustomFormsModule } from 'ng2-validation'
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
         CommonModule,
         BrowserModule,
         FormsModule,
-        Ng2FilterPipeModule
+        CustomFormsModule,
+        Ng2FilterPipeModule,
         ReactiveFormsModule,
         RouterModule.forChild(MODULE_ROUTES)
     ],

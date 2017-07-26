@@ -4,6 +4,7 @@ import initDemo = require('../../../assets/js/charts.js');
 import {ClientService} from '../../services/client.service';
 
 import { Router } from "@angular/router";
+import {ClientModel} from '../../model/client';
 
 @Component({
     selector: 'home-cmp',
@@ -30,7 +31,7 @@ pListPackForAjoutClient : Pack[] = [];
 num_clientForAjout : number;
 nom_clientForAjout : string;
 etatForAjout : boolean;
-
+filtre :ClientModel = new ClientModel();
 
 constructor(private  clientService: ClientService,private route :Router){ }
    
@@ -136,8 +137,10 @@ bloquerClient(isChecked: boolean)
 {
     if(isChecked) {
     this.etat=false;
+    this.etatForAjout=false;
   } else {
     this.etat=true;
+    this.etatForAjout=true;
 
    
   }
@@ -156,6 +159,9 @@ debloquerClient(isChecked: boolean)
   }
    console.log(this.etat);
 }
+
+
+
 
 
 

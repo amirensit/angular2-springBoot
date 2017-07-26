@@ -23,6 +23,11 @@ partieAjout : boolean;
 
 motCle:string="";
 
+pageMarques : any;
+pageCourante:number=0;
+size:number=4;
+pages:any[];
+
 
 constructor( private typeServiceService  : TypeServiceService,private route :Router){ }
 
@@ -36,6 +41,7 @@ ngOnInit(){
             );
       this.partieAffiche=true;
       this.partieAjout=false;
+      
 
     
     }

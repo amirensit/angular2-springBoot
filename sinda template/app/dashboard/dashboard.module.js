@@ -15,6 +15,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var common_1 = require('@angular/common');
 var ng2_filter_pipe_1 = require('ng2-filter-pipe');
+var ng2_validation_1 = require('ng2-validation');
 var DashboardModule = (function () {
     function DashboardModule() {
     }
@@ -24,6 +25,7 @@ var DashboardModule = (function () {
                 common_1.CommonModule,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                ng2_validation_1.CustomFormsModule,
                 ng2_filter_pipe_1.Ng2FilterPipeModule,
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forChild(dashboard_routes_1.MODULE_ROUTES)

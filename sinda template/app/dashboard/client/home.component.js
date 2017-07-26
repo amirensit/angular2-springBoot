@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var client_service_1 = require('../../services/client.service');
 var router_1 = require("@angular/router");
+var client_1 = require('../../model/client');
 var HomeComponent = (function () {
     function HomeComponent(clientService, route) {
         this.clientService = clientService;
         this.route = route;
         this.pListPackForAjoutClient = [];
+        this.filtre = new client_1.ClientModel();
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -75,9 +77,11 @@ var HomeComponent = (function () {
     HomeComponent.prototype.bloquerClient = function (isChecked) {
         if (isChecked) {
             this.etat = false;
+            this.etatForAjout = false;
         }
         else {
             this.etat = true;
+            this.etatForAjout = true;
         }
         console.log(this.etat);
     };

@@ -3,14 +3,15 @@ import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './client/home.component';
 
 import { PackComponent } from './pack/pack.component';
-import { IconsComponent } from './icons/icons.component';
+import { GouvernoratComponent } from './gouvernorat/gouvernorat.component';
 
 import { MarqueComponent } from './marque/marque.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+import { VilleComponent } from './ville/ville.component';
 
 import { TypeServiceComponent } from './typeService/typeService.component';
-import { MapsComponent } from './maps/maps.component';
+import { RemorqueurComponent } from './remorqueur/remorqueur.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+
 
 export const MODULE_ROUTES: Route[] =[
     { path: 'clients', component: HomeComponent },
@@ -18,12 +19,13 @@ export const MODULE_ROUTES: Route[] =[
     { path: 'packs', component: PackComponent },
     
     { path: 'marques', component: MarqueComponent },
-    { path: 'icons', component: IconsComponent },
-    { path: 'notifications', component: NotificationsComponent },
+    { path: 'gouvernorats', component: GouvernoratComponent },
+    { path: 'villes', component: VilleComponent },
     
     { path: 'typeService', component: TypeServiceComponent },
-    { path: 'maps', component: MapsComponent },
+    { path: 'remorqueurs', component: RemorqueurComponent },
     { path: 'upgrade', component: UpgradeComponent },
+    
     { path: '', redirectTo: 'clients', pathMatch: 'full' }
 ]
 
@@ -31,12 +33,13 @@ export const MODULE_COMPONENTS = [
     HomeComponent,
     
     PackComponent,
-    //TableComponent,
+    
     MarqueComponent,
-    IconsComponent,
-    NotificationsComponent,
-    //TypographyComponent,
+    GouvernoratComponent,
+    VilleComponent,
+   
     TypeServiceComponent,
-    MapsComponent,
+    RemorqueurComponent,
     UpgradeComponent
+    
 ]
